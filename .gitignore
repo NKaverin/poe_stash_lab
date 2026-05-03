@@ -1,0 +1,28 @@
+# Data files (scoped, not global)
+data/
+data/**/*.json
+data/**/*.csv
+*.log
+
+# C++ build artifacts
+cpp/build/
+cpp/*.o
+cpp/*.exe
+
+# Python
+__pycache__/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets
+.env
+.env.*
+
+# Editors
+.idea/
+.vscode/
+
+# Do not ignore the manifest file
+!data/raw/manifest.json

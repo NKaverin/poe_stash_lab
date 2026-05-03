@@ -1,0 +1,9 @@
+[project]
+name = "kibana-elasticsearch-project"
+version = "0.1.0"
+description = "It is just a small project over weekend to show my work with Kibana and Elasticsearch"
+requires-python = ">=3.12"
+dependencies = [
+    "elasticsearch>=9.3.0",
+    "requests>=2.32.0",
+]

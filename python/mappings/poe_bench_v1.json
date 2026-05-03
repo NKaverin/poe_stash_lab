@@ -1,0 +1,25 @@
+{
+    "index_patterns": ["poe-bench"],
+    "priority": 200,
+    "_meta": {
+      "version": 1,
+      "description": "One doc per upload run. Used to compare Python vs C++ throughput in Kibana."
+    },
+    "template": {
+      "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 0
+      },
+      "mappings": {
+        "dynamic": "strict",
+        "properties": {
+          "@timestamp":  { "type": "date" },
+          "tool":        { "type": "keyword" },
+          "league_id":   { "type": "keyword" },
+          "doc_count":   { "type": "integer" },
+          "duration_ms": { "type": "float" },
+          "failures":    { "type": "integer" }
+        }
+      }
+    }
+  }
