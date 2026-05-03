@@ -1,0 +1,83 @@
+{
+    "index_patterns": ["poe-data-*"],
+    "priority": 200,
+    "_meta": {
+      "version": 1,
+      "owner": "poe-pipeline",
+      "description": "poe.watch market snapshots, one index per league (poe-data-{league})."
+    },
+    "template": {
+      "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 0,
+        "refresh_interval": "30s"
+      },
+      "mappings": {
+        "dynamic": "strict",
+  
+        "properties": {
+          "@timestamp":   { "type": "date" },
+          "league":       { "type": "keyword" },
+          "hardcore":     { "type": "boolean" },
+  
+          "ingest_metadata": {
+            "properties": {
+              "language":          { "type": "keyword" },
+              "execution_time_ms": { "type": "float" }
+            }
+          },
+  
+          "id":         { "type": "keyword" },
+          "name":       { "type": "keyword", "fields": { "text": { "type": "text" } } },
+          "category":   { "type": "keyword" },
+          "group":      { "type": "keyword" },
+          "type":       { "type": "keyword" },
+  
+          "frame":      { "type": "byte" },
+          "influences": { "type": "keyword" },
+          "icon":       { "type": "keyword", "index": false },
+  
+          "mean":             { "type": "float" },
+          "min":              { "type": "float" },
+          "max":              { "type": "float" },
+          "divine":           { "type": "float" },
+          "exalted":          { "type": "float" },
+          "history":          { "type": "float" },
+          "sevenDaysHistory": { "type": "float" },
+          "perfectPrice":     { "type": "float" },
+          "perfectAmount":    { "type": "integer" },
+  
+          "daily":          { "type": "integer" },
+          "change":         { "type": "float" },
+          "changeByPrice":  { "type": "float" },
+          "chaos_pair_id":  { "type": "integer" },
+          "divine_pair_id": { "type": "integer" },
+  
+          "lowConfidence":  { "type": "boolean" },
+  
+          "itemLevel":      { "type": "short" },
+          "width":          { "type": "byte" },
+          "height":         { "type": "byte" },
+          "linkCount":      { "type": "byte" },
+          "implicits":      { "type": "keyword" },
+          "explicits":      { "type": "keyword" },
+  
+          "gemLevel":       { "type": "byte" },
+          "gemQuality":     { "type": "byte" },
+          "gemIsCorrupted": { "type": "boolean" },
+  
+          "mapSeries":      { "type": "short" },
+          "mapTier":        { "type": "byte" },
+  
+          "tier":           { "type": "byte" },
+          "uses":           { "type": "byte" },
+  
+          "reward":         { "type": "keyword" },
+          "reward_id":      { "type": "integer" },
+          "reward_price":   { "type": "float" },
+  
+          "wingsRevealed":  { "type": "keyword" }
+        }
+      }
+    }
+  }

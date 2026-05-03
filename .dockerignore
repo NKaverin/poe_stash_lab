@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Python
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# Editors
+.idea
+.vscode
+
+# Secrets
+.env
+.env.*
+
+docker-compose.override.yml
+
+# Project artifacts and docs
+data
+*.md
+cpp/build
+cpp/*.o
+cpp/*.exe
