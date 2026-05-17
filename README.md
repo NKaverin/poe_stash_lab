@@ -1,4 +1,4 @@
-# Small weekend project (Kibana & Elasticsearch)
+# Weekend project (Kibana & Elasticsearch)
 
 [poe.watch](https://api.poe.watch/) market snapshots into **Elasticsearch**, explore them in **Kibana**, and compare bulk-ingest speed between **Python** and **C++**.
 
